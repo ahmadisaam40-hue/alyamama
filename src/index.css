@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Al Yamamah Insurance - Professional Blue & Gold Theme */
+    --background: 210 30% 98%;
+    --foreground: 215 35% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 35% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 35% 15%;
+
+    --primary: 215 70% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 42 85% 55%;
+    --secondary-foreground: 215 35% 15%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 20% 45%;
+
+    --accent: 42 85% 55%;
+    --accent-foreground: 215 35% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 215 70% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom semantic tokens */
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 215 35% 15%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 35% 10%;
+    --foreground: 210 30% 98%;
+
+    --card: 215 35% 14%;
+    --card-foreground: 210 30% 98%;
+
+    --popover: 215 35% 14%;
+    --popover-foreground: 210 30% 98%;
+
+    --primary: 42 85% 55%;
+    --primary-foreground: 215 35% 10%;
+
+    --secondary: 215 50% 30%;
+    --secondary-foreground: 210 30% 98%;
+
+    --muted: 215 30% 18%;
+    --muted-foreground: 210 20% 60%;
+
+    --accent: 42 85% 55%;
+    --accent-foreground: 215 35% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 30% 22%;
+    --input: 215 30% 22%;
+    --ring: 42 85% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Cairo', system-ui, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+    font-family: 'Cairo', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(215 70% 20%) 0%, hsl(215 70% 35%) 100%);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(42 85% 50%) 0%, hsl(38 90% 60%) 100%);
+  }
+
+  .card-gradient {
+    background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 30% 98%) 100%);
+  }
+
+  .shadow-card {
+    box-shadow: 0 4px 20px -4px hsl(215 70% 25% / 0.1);
+  }
+
+  .shadow-card-hover {
+    box-shadow: 0 12px 32px -8px hsl(215 70% 25% / 0.2);
+  }
+
+  .shadow-hero {
+    box-shadow: 0 25px 50px -12px hsl(215 70% 25% / 0.25);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(42 85% 50%) 0%, hsl(38 90% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Uverse-inspired glow effects */
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(42 85% 55% / 0.4),
+      0 0 40px hsl(42 85% 55% / 0.2),
+      0 0 60px hsl(42 85% 55% / 0.1);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(215 70% 35% / 0.4),
+      0 0 40px hsl(215 70% 35% / 0.2);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px hsl(42 85% 55% / 0.5),
+      0 0 60px hsl(42 85% 55% / 0.3);
+  }
+
+  /* Glassmorphism */
+  .glass {
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(0 0% 100% / 0.2);
+  }
+
+  .glass-dark {
+    background: hsl(215 70% 25% / 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+  }
+
+  /* Product card colors using semantic approach */
+  .product-icon-engineering {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .product-icon-health {
+    background-color: hsl(0 70% 95%);
+    color: hsl(0 70% 45%);
+  }
+
+  .product-icon-car {
+    background-color: hsl(142 70% 95%);
+    color: hsl(142 70% 35%);
+  }
+
+  .product-icon-fire {
+    background-color: hsl(25 95% 95%);
+    color: hsl(25 95% 50%);
+  }
+
+  .product-icon-freight {
+    background-color: hsl(270 70% 95%);
+    color: hsl(270 70% 50%);
+  }
+
+  .product-icon-cash {
+    background-color: hsl(160 70% 95%);
+    color: hsl(160 70% 35%);
+  }
+
+  .product-icon-travel {
+    background-color: hsl(190 80% 95%);
+    color: hsl(190 80% 40%);
+  }
+
+  .product-icon-life {
+    background-color: hsl(330 70% 95%);
+    color: hsl(330 70% 45%);
+  }
+
+  .product-icon-liability {
+    background-color: hsl(220 60% 95%);
+    color: hsl(220 60% 40%);
+  }
+
+  .product-icon-marine {
+    background-color: hsl(200 70% 90%);
+    color: hsl(200 70% 30%);
+  }
+
+  /* Animated border */
+  .animated-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animated-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(90deg, hsl(42 85% 55%), hsl(215 70% 35%), hsl(42 85% 55%));
+    background-size: 200% 100%;
+    animation: borderGlow 3s linear infinite;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  @keyframes borderGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
+  /* Flip Card System */
+  .flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 320px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .flip-card-front {
+    background: white;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+  }
+
+  .flip-card-back {
+    @apply hero-gradient text-white;
+    transform: rotateY(180deg);
+    box-shadow: 0 10px 40px -10px hsl(215 70% 25% / 0.4);
+  }
+
+  /* Floating animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Pulse glow */
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px hsl(42 85% 55% / 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 40px hsl(42 85% 55% / 0.6);
+    }
+  }
+}
